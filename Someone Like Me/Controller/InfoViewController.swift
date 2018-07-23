@@ -22,6 +22,7 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
         headerBlurrEffect.alpha = 0
         // Do any additional setup after loading the view.
+
     }
 
 }

@@ -372,7 +372,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z99-iY-lhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3577" y="-502"/>
+            <point key="canvasLocation" x="3272" y="143"/>
         </scene>
         <!--Register-->
         <scene sceneID="HC5-Au-FSM">
@@ -562,9 +562,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaL-dV-LOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4203" y="224"/>
+            <point key="canvasLocation" x="4126" y="143"/>
         </scene>
-        <!--Change City View Controller-->
+        <!--Item-->
         <scene sceneID="Lvu-wX-WcN">
             <objects>
                 <viewController id="Mcx-qc-QBA" customClass="ChangeCityViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
@@ -645,6 +645,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MNC-A4-sOd"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="ow0-9D-OdL"/>
                     <navigationItem key="navigationItem" id="UZI-Yn-32v"/>
                     <connections>
                         <outlet property="changeCityTextField" destination="gSf-eD-TOE" id="OpP-Oo-DaH"/>
@@ -669,21 +670,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sky" translatesAutoresizingMaskIntoConstraints="NO" id="ppg-cA-tuj" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21A-qW-WM0" userLabel="Back Button">
-                                <rect key="frame" x="16" y="72" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="EBg-4a-qyf"/>
-                                    <constraint firstAttribute="width" constant="32" id="e4H-AZ-fht"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="nS2-Vf-T4k"/>
-                                </constraints>
-                                <size key="titleShadowOffset" width="2" height="2"/>
-                                <state key="normal" image="left">
-                                    <color key="titleShadowColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="Mcx-qc-QBA" eventType="touchUpInside" id="R9r-CW-Sye"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avf-Xj-GHw" userLabel="Change City Button">
                                 <rect key="frame" x="344" y="21" width="45" height="45"/>
                                 <constraints>
@@ -737,14 +723,12 @@
                             <constraint firstItem="3HH-08-JiD" firstAttribute="top" secondItem="9pb-Uw-Dt9" secondAttribute="bottom" constant="2" id="5z5-y2-ZEy"/>
                             <constraint firstItem="avf-Xj-GHw" firstAttribute="top" secondItem="AW8-jR-N9G" secondAttribute="bottom" id="Dq5-XX-zr8"/>
                             <constraint firstItem="DQg-LA-MqI" firstAttribute="top" secondItem="ppg-cA-tuj" secondAttribute="bottom" id="JPm-2t-87J"/>
-                            <constraint firstItem="21A-qW-WM0" firstAttribute="leading" secondItem="Wrg-iZ-6sP" secondAttribute="leading" constant="16" id="LzM-zN-cmd"/>
                             <constraint firstItem="DQg-LA-MqI" firstAttribute="top" secondItem="dj1-x2-5ke" secondAttribute="bottom" constant="20" id="Ngv-vR-KOd"/>
                             <constraint firstItem="avf-Xj-GHw" firstAttribute="trailing" secondItem="QNR-ye-ckC" secondAttribute="trailingMargin" id="P9v-23-0fJ"/>
                             <constraint firstItem="ppg-cA-tuj" firstAttribute="leading" secondItem="QNR-ye-ckC" secondAttribute="leading" id="SFf-zl-FWL"/>
                             <constraint firstItem="dj1-x2-5ke" firstAttribute="leading" secondItem="QNR-ye-ckC" secondAttribute="leading" id="Xrg-B2-EbQ"/>
                             <constraint firstAttribute="bottom" secondItem="3HH-08-JiD" secondAttribute="bottom" constant="565" id="bOu-gp-M0q"/>
                             <constraint firstItem="3HH-08-JiD" firstAttribute="leading" secondItem="QNR-ye-ckC" secondAttribute="leading" constant="52" id="dYK-LU-b1B"/>
-                            <constraint firstItem="21A-qW-WM0" firstAttribute="top" secondItem="AW8-jR-N9G" secondAttribute="bottom" constant="8" symbolic="YES" id="fJD-sb-ewc"/>
                             <constraint firstItem="ppg-cA-tuj" firstAttribute="top" secondItem="QNR-ye-ckC" secondAttribute="top" id="n9f-PS-8Mm"/>
                             <constraint firstAttribute="trailing" secondItem="ppg-cA-tuj" secondAttribute="trailing" id="rbk-w8-7EX"/>
                         </constraints>
@@ -752,9 +736,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="celsius" id="qtK-HR-iHS"/>
                     <connections>
-                        <outlet property="cityLabel" destination="3HH-08-JiD" id="y7h-9e-oVp"/>
-                        <outlet property="temperatureLabel" destination="rwY-f9-tbJ" id="VAd-rW-idD"/>
-                        <outlet property="weatherIcon" destination="9pb-Uw-Dt9" id="HGp-60-Fhu"/>
+                        <segue destination="Mcx-qc-QBA" kind="show" id="J9S-gj-lTF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCn-uO-kxw" sceneMemberID="firstResponder"/>
@@ -786,13 +768,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Articles" id="avt-6T-Stl"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pDq-lo-MYn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="4e5-IC-EXA" kind="relationship" relationship="viewControllers" id="Ar4-6O-baC"/>
-                        <segue destination="l5R-U8-FUU" kind="relationship" relationship="viewControllers" id="ExO-e1-Gxl"/>
+                        <segue destination="l5R-U8-FUU" kind="relationship" relationship="viewControllers" id="O6g-it-Iog"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hj1-Mk-g76" userLabel="First Responder" sceneMemberID="firstResponder"/>
