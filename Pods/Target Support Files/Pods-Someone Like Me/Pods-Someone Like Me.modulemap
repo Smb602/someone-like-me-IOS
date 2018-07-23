@@ -1,0 +1,6 @@
+framework module Pods_Someone_Like_Me {
+  umbrella header "Pods-Someone Like Me-umbrella.h"
+
+  export *
+  module * { export * }
+}
