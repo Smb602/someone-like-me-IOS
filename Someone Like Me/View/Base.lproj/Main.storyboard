@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2yw-vG-aK1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,25 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ktF-sL-XRP">
-            <objects>
-                <viewController id="pn3-d8-q5Y" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FDh-nM-8dd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="lpA-V9-z5P"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hnm-bD-8om" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-697" y="144"/>
-        </scene>
         <!--Welcome Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Welcome Screen" id="BYZ-38-t0r" customClass="ViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Welcome Screen" id="BYZ-38-t0r" customClass="WelcomeScreenViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +32,9 @@
                                 <state key="normal" title="REGISTER">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="W07-AN-Fvr" kind="show" identifier="goToRegister" id="MRC-im-Dwm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoM-oW-F2f">
                                 <rect key="frame" x="226" y="627" width="150" height="60"/>
@@ -56,6 +44,9 @@
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="mEt-mR-ipT" kind="show" identifier="goToLogin" id="mwB-Qi-vxU"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pain Management Community" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ewa-Ra-1vm">
                                 <rect key="frame" x="61" y="66" width="292" height="24"/>
@@ -90,7 +81,7 @@
         <!--Log In-->
         <scene sceneID="rf0-Pa-VBm">
             <objects>
-                <viewController storyboardIdentifier="logInVC" id="mEt-mR-ipT" customClass="LogInViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInVC" id="mEt-mR-ipT" customClass="LoginScreenViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Oif-A0-giV"/>
                         <viewControllerLayoutGuide type="bottom" id="cfT-dX-dRd"/>
@@ -140,7 +131,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="registerPressed:" destination="W07-AN-Fvr" eventType="touchUpInside" id="oit-hd-dmy"/>
+                                            <action selector="loginButtonPressed:" destination="mEt-mR-ipT" eventType="touchUpInside" id="iTh-Cd-HrU"/>
+                                            <segue destination="2yw-vG-aK1" kind="show" identifier="goToInfo" id="iJg-I1-eYh"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hW-7z-Z26">
@@ -261,10 +253,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="xgi-1E-0gO"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="enterEmailTextField" destination="jg5-Ze-hng" id="fwF-KU-kEJ"/>
+                        <outlet property="enterPasswordTextField" destination="Uui-tG-43a" id="H1p-XJ-ttG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goj-dF-UMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="746"/>
+            <point key="canvasLocation" x="993" y="902"/>
         </scene>
         <!--Articles-->
         <scene sceneID="2y0-vb-ws3">
@@ -377,7 +373,7 @@
         <!--Register-->
         <scene sceneID="HC5-Au-FSM">
             <objects>
-                <viewController storyboardIdentifier="registrationVC" id="W07-AN-Fvr" customClass="RegisterViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registrationVC" id="W07-AN-Fvr" customClass="RegisterScreenViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Gc-Dg-EQv"/>
                         <viewControllerLayoutGuide type="bottom" id="kKo-7t-wKX"/>
@@ -397,6 +393,7 @@
                                         <rect key="frame" x="56" y="352" width="270" height="56"/>
                                         <color key="backgroundColor" red="0.99607843137254903" green="0.82745098039215681" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="270" id="Dsy-UK-FkX"/>
                                             <constraint firstAttribute="width" secondItem="w7P-IY-J07" secondAttribute="height" multiplier="135:34" constant="47.647058823529392" id="b3c-Zy-gto"/>
                                             <constraint firstAttribute="height" constant="56" id="yS3-vt-c1t"/>
                                         </constraints>
@@ -420,7 +417,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="registerPressed:" destination="W07-AN-Fvr" eventType="touchUpInside" id="0nd-p8-cVj"/>
+                                            <action selector="registerButtonPressed:" destination="W07-AN-Fvr" eventType="touchUpInside" id="Src-fG-aFO"/>
+                                            <segue destination="2yw-vG-aK1" kind="show" identifier="goToInfo" id="g1M-GT-L81"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-Gs-Ogx">
@@ -531,6 +529,10 @@
                         <viewLayoutGuide key="safeArea" id="u62-aP-qil"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="CMD-ku-wa6"/>
+                    <connections>
+                        <outlet property="enterEmailTextField" destination="Mzq-fK-zOx" id="72F-IS-Oz7"/>
+                        <outlet property="enterPasswordTextField" destination="JXF-ys-J8T" id="vtk-2g-tfz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJ9-RR-Bqd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -567,7 +569,7 @@
         <!--Item-->
         <scene sceneID="Lvu-wX-WcN">
             <objects>
-                <viewController id="Mcx-qc-QBA" customClass="ChangeCityViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mcx-qc-QBA" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="apd-ah-3YL"/>
                         <viewControllerLayoutGuide type="bottom" id="JUt-4x-W8F"/>
@@ -658,7 +660,7 @@
         <!--Item-->
         <scene sceneID="l45-h6-08u">
             <objects>
-                <viewController id="l5R-U8-FUU" customClass="WeatherViewController" customModule="Someone_Like_Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="l5R-U8-FUU" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AW8-jR-N9G"/>
                         <viewControllerLayoutGuide type="bottom" id="DQg-LA-MqI"/>
@@ -795,4 +797,7 @@
         <image name="rocks" width="1050" height="700"/>
         <image name="sky" width="1246" height="700"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="g1M-GT-L81"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -27,9 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //saving some test data to the database and seeing if it works, here creating a constant miDatabase with reference to my database within Firebase
-                let miDatabase = Database.database().reference()
-                miDatabase.setValue("I have some data saved, woo!")
+        //    let miDatabase = Database.database().reference()
+        //       miDatabase.setValue("I have some data saved, woo!")
         
         return true
     }
+    
 }

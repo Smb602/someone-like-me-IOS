@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		241387962104F970003E8001 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 241387952104F970003E8001 /* Default-568h@2x.png */; };
 		2413879821061A48003E8001 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413879721061A48003E8001 /* InfoViewController.swift */; };
+		242ABEC32106A43A005572F0 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */; };
+		242ABEC52106A47B005572F0 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */; };
 		248DD4AC2106230100E7FCA9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248DD4AB2106230100E7FCA9 /* TableViewCell.swift */; };
 		249EA00320FFA54000E12CE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 249EA00220FFA53F00E12CE1 /* GoogleService-Info.plist */; };
 		249EA00B20FFB32D00E12CE1 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249EA00A20FFB32D00E12CE1 /* Messages.swift */; };
@@ -16,6 +18,7 @@
 		24E3DD6A20ED60E500D71E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E3DD6820ED60E500D71E63 /* Main.storyboard */; };
 		24E3DD6C20ED60E600D71E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E3DD6B20ED60E600D71E63 /* Assets.xcassets */; };
 		24E3DD6F20ED60E600D71E63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E3DD6D20ED60E600D71E63 /* LaunchScreen.storyboard */; };
+		24F8AB032106D2920066076E /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F8AB022106D2920066076E /* WelcomeScreenViewController.swift */; };
 		F51CF9FC75FC17ABE8C61FCA /* Pods_Someone_Like_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C463EF30904C973F1846D692 /* Pods_Someone_Like_Me.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +26,8 @@
 		0F0F1F6DECD704DBFB7243B4 /* Pods-Someone Like Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Someone Like Me.release.xcconfig"; path = "Pods/Target Support Files/Pods-Someone Like Me/Pods-Someone Like Me.release.xcconfig"; sourceTree = "<group>"; };
 		241387952104F970003E8001 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2413879721061A48003E8001 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
 		248DD4AB2106230100E7FCA9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		249EA00220FFA53F00E12CE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		249EA00A20FFB32D00E12CE1 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		24E3DD6B20ED60E600D71E63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		24E3DD6E20ED60E600D71E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24E3DD7020ED60E600D71E63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24F8AB022106D2920066076E /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		645446F6429D9CAA7882F6A3 /* Pods-Someone Like Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Someone Like Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Someone Like Me/Pods-Someone Like Me.debug.xcconfig"; sourceTree = "<group>"; };
 		C463EF30904C973F1846D692 /* Pods_Someone_Like_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Someone_Like_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,6 +69,9 @@
 			children = (
 				24E3DD6420ED60E500D71E63 /* AppDelegate.swift */,
 				2413879721061A48003E8001 /* InfoViewController.swift */,
+				242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */,
+				242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */,
+				24F8AB022106D2920066076E /* WelcomeScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,7 +269,10 @@
 			files = (
 				249EA00B20FFB32D00E12CE1 /* Messages.swift in Sources */,
 				248DD4AC2106230100E7FCA9 /* TableViewCell.swift in Sources */,
+				242ABEC32106A43A005572F0 /* LoginScreenViewController.swift in Sources */,
 				2413879821061A48003E8001 /* InfoViewController.swift in Sources */,
+				242ABEC52106A47B005572F0 /* RegisterScreenViewController.swift in Sources */,
+				24F8AB032106D2920066076E /* WelcomeScreenViewController.swift in Sources */,
 				24E3DD6520ED60E500D71E63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
