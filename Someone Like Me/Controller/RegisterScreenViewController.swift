@@ -34,14 +34,15 @@ class RegisterScreenViewController: UIViewController {
         
        SVProgressHUD.show()
         
-        //Using a prebuilt method called createuserwithemailandpassword found in the firebase API that creates a new user on the firebase database
+        //Using a prebuilt method called createuserwithemailandpassword found in the firebase API that creates a new user on the firebase database, also using completion handler and closures
+        //so if there is an error with creating a user that would print error, if successful -> home page
         
         Auth.auth().createUser(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!) { (user, error) in
             
             if error != nil {
                 print(error!)
             } else {
-               print("Your Registration Was Succesful")
+               print("Your Registration Was Successful")
                 
                 SVProgressHUD.dismiss()
             }

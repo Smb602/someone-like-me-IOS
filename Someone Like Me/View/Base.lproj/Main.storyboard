@@ -429,7 +429,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.15973984771573602" green="0.15973984771573602" blue="0.15973984771573602" alpha="0.26046125856164382" colorSpace="custom" customColorSpace="sRGB"/>
@@ -538,7 +538,7 @@
             </objects>
             <point key="canvasLocation" x="992.75362318840587" y="-218.47826086956525"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Chats-->
         <scene sceneID="9zJ-hv-KW5">
             <objects>
                 <tableViewController id="3W0-Z6-nja" sceneMemberID="viewController">
@@ -561,10 +561,11 @@
                             <outlet property="delegate" destination="3W0-Z6-nja" id="Gpu-kf-MH3"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Chats" image="chat" id="6ob-Zm-CVB"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zaL-dV-LOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4126" y="143"/>
+            <point key="canvasLocation" x="2130" y="1010"/>
         </scene>
         <!--Item-->
         <scene sceneID="Lvu-wX-WcN">
@@ -657,7 +658,7 @@
             </objects>
             <point key="canvasLocation" x="4484" y="1064"/>
         </scene>
-        <!--Item-->
+        <!--Weather-->
         <scene sceneID="l45-h6-08u">
             <objects>
                 <viewController id="l5R-U8-FUU" sceneMemberID="viewController">
@@ -736,7 +737,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wrg-iZ-6sP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="celsius" id="qtK-HR-iHS"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="celsius" id="qtK-HR-iHS"/>
                     <connections>
                         <segue destination="Mcx-qc-QBA" kind="show" id="J9S-gj-lTF"/>
                     </connections>
@@ -778,6 +779,7 @@
                     <connections>
                         <segue destination="4e5-IC-EXA" kind="relationship" relationship="viewControllers" id="Ar4-6O-baC"/>
                         <segue destination="l5R-U8-FUU" kind="relationship" relationship="viewControllers" id="O6g-it-Iog"/>
+                        <segue destination="3W0-Z6-nja" kind="relationship" relationship="viewControllers" id="0ss-n5-fb3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hj1-Mk-g76" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -788,6 +790,7 @@
     <resources>
         <image name="article-view header" width="3826" height="3097"/>
         <image name="celsius" width="27" height="29"/>
+        <image name="chat" width="30" height="28"/>
         <image name="exchange" width="512" height="512"/>
         <image name="group" width="512" height="512"/>
         <image name="home" width="31" height="27"/>
