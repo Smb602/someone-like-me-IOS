@@ -29,16 +29,15 @@ class LoginScreenViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
-    }
+        //firebase method
+        Auth.auth().signIn(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!) { (user, error) in
+        //handling errors - if error print else
+            if error != nil {
+                print(error!)
+            }else{
+                print("Login was successful")
+            }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        }
     }
-    */
-
 }

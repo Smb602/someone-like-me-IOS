@@ -1,15 +1,24 @@
 /*
-  WelcomeScreenViewController.swift
-  Someone Like Me
-
-  Created by Sharon Borges-Bango on 24/07/2018.
-  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
+//  ChatsViewController.swift
+//  Someone Like Me
+//
+//  Created by Sharon Borges-Bango on 28/07/2018.
+//  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
 */
 
 import UIKit
 import Firebase
 
-class WelcomeScreenViewController: UIViewController {
+class ChatsViewController: UIViewController {
+    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        <#code#>
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        <#code#>
+//    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
