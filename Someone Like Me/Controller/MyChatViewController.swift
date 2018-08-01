@@ -34,22 +34,19 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //Setting self as the datasource and the delegate
         messagesTableView.dataSource = self
         messagesTableView.delegate = self
-        
-        
         //Setting self as the delegate - text field
         typeMessageTextfield.delegate = self
-        
+        //Registering the MessageCell.xib file containing a cell with the table view under a specifies identifier
+        messagesTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "TailoredMessageCell")
         
         //Tap gesture is registered
         let thisTapGesture = UITapGestureRecognizer(target: self, action: #selector (thisTableViewTapped))
+        
         messagesTableView.addGestureRecognizer(thisTapGesture)
-        
-        
-        //Registering the MessageCell.xib file containing a cell with the table view under a specifies identifier
-        messagesTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "TailoredMessageCell")
 
         //adding the configureTheTableView method here that customizes the cell size in relation to message sent size
         configureTheTableView()
+
         getMessages() //getting messages using this method
         
         messagesTableView.separatorStyle = .none //no seperation line between messages so more seamless like a messageapp
@@ -82,11 +79,11 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         cell.theMessageBody.text = messagesArray[indexPath.row].theMessageBody
         cell.theSendersUsername.text = messagesArray[indexPath.row].sender
-        cell.displayPicture.image = UIImage(named: "default-picture")
+        cell.displayPicture.image = UIImage(named: "default-picture.png")
         
         //messages sent by us, change the imageview to xxx colour
         if cell.theSendersUsername.text == Auth.auth().currentUser?.email as String! { //or replace everything after = to = "Me"
-            cell.displayPicture.backgroundColor = UIColor.flatPowderBlue()
+            cell.displayPicture.backgroundColor = UIColor.flatPowderBlue() //set colours to these
             cell.theMessageBackground.backgroundColor = UIColor.flatLime()
             
         }else{ //messages not sent by us
@@ -109,7 +106,9 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
         typeMessageTextfield.endEditing(true)
     }
     
-    
+   // func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       
+    //}
     
     // This method is to configure the TableView so that the message cell is created based on the size of the content and resize based on this
     
@@ -127,19 +126,37 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //This method will be triggered when user is about to type in textField, so tells delegate editing began in specified textfield
     func textFieldDidBeginEditing(_ textField: UITextField) {
-       
-        UIView.animate(withDuration: 0.4) {
+
+        //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+
+        UIView.animate(withDuration: 0.6) {
             //this is so the textfield view is still visible once keyboard comes up
-            self.heightConstraint.constant += 308 //textfield=50 keyboard=258 50+258=308
+            self.heightConstraint.constant = 308 //textfield=50 keyboard=258 50+258=308
             //call method on view to call on autolayout to update all views
             self.view.layoutIfNeeded() //redraw the whole thing
         }
     }
     
+//    //Get Keyboard Height and Animation When Keyboard Shows Up
+//    @objc func keyboardWillShow(notification: Notification) {
+//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            let keyboardHeight = keyboardSize.height
+//            //iPhone X has Safe Area Insets
+//            if #available(iOS 11.0, *) {
+//                heightConstraint.constant = keyboardHeight - view.safeAreaInsets.bottom + 50
+//            } else {
+//                // Fallback on earlier versions
+//                heightConstraint.constant = keyboardHeight + 50
+//            }
+//            view.layoutIfNeeded()
+//        }
+//
+//    }
+//
     //This method tells the delegate when editing has stopped in specified textfield and requires a tap gesture to register when user moves away
     func textFieldDidEndEditing(_ textField: UITextField) {
-        UIView.animate(withDuration: 0.4) {
-            self.heightConstraint.constant -= 308 //back to 50 after keyboard is gone
+        UIView.animate(withDuration: 0.6) {
+            self.heightConstraint.constant = 308 //back to 50 after keyboard is gone
             self.view.layoutIfNeeded()
         }
     }
