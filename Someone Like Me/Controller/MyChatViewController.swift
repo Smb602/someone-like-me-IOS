@@ -28,6 +28,7 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
 
         // Do any additional setup after loading the view.
         
@@ -106,9 +107,6 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
         typeMessageTextfield.endEditing(true)
     }
     
-   // func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
-    //}
     
     // This method is to configure the TableView so that the message cell is created based on the size of the content and resize based on this
     

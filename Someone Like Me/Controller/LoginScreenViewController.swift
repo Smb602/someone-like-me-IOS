@@ -17,12 +17,14 @@ class LoginScreenViewController: UIViewController {
     @IBOutlet var enterEmailTextField: UITextField!
     @IBOutlet var enterPasswordTextField: UITextField!
     
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
     }
+
+//        // Do any additional setup after loading the view.
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,7 +51,22 @@ class LoginScreenViewController: UIViewController {
                 SVProgressHUD.showSuccess(withStatus: "Login was successful")
                 SVProgressHUD.dismiss(withDelay: 1)
             }
-    
+            
         }
     }
 }
+//closing the iOS keyboard by touching anywhere using Swift was taken from:
+// https://stackoverflow.com/questions/24126678/close-ios-keyboard-by-touching-anywhere-using-swift?noredirect=1&lq=1
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+
