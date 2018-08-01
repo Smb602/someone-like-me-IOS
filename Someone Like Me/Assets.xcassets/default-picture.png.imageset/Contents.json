@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "background2.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "egg@2x.png.png",
       "scale" : "2x"
     },
     {

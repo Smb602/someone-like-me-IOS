@@ -11,11 +11,31 @@ import Firebase
 
 class WelcomeScreenViewController: UIViewController {
 
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        setUpNavigationBar()
+//        navigationController?.setNavigationBarHidden(true, animated: false)
+//    }
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+//    func setUpNavigationBar (){
+//        navigationController?.navigationBar.barTintColor = UIColor.flatGreen()
+//        navigationController?.navigationBar.barStyle = .blackTranslucent
+//        UIBarButtonItem.appearance().tintColor = UIColor.white
+//
+//
+//    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//
+//
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

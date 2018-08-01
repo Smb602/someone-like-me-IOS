@@ -10,6 +10,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginScreenViewController: UIViewController {
 
@@ -29,13 +30,24 @@ class LoginScreenViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: AnyObject) {
+        
+        SVProgressHUD.show(withStatus: "Logging you in..") //pop up loading for user as indicator so they know they're logging in using the SV cocoa pod
+        
         //firebase method
         Auth.auth().signIn(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!) { (user, error) in
         //handling errors - if error print else
             if error != nil {
+                print("Login unsuccessful, please see error below")
                 print(error!)
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: "You have entered an incorrect password or email")
+                SVProgressHUD.dismiss(withDelay: 1)
             }else{
                 print("Login was successful")
+                
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showSuccess(withStatus: "Login was successful")
+                SVProgressHUD.dismiss(withDelay: 1)
             }
     
         }

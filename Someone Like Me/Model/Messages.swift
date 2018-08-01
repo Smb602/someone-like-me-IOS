@@ -16,7 +16,7 @@ class Messages {
     /* TO DO: Here the messages will need a messageBody and a sender variable */
     
     var theMessageBody : String = " " //will contain the message content
-    var theSender : String = " " //will contain who sent the message
+    var sender : String = " " //will contain who sent the message
     
     // both properties are empty strings
 }

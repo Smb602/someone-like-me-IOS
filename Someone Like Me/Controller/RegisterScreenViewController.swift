@@ -32,7 +32,7 @@ class RegisterScreenViewController: UIViewController {
     
     @IBAction func registerButtonPressed(_ sender: AnyObject) {
         
-       SVProgressHUD.show()
+       SVProgressHUD.show(withStatus: "Logging you in..") //triggers the loading indicator as soon as the user has pressed the register button
         
         //Using a prebuilt method called createuserwithemailandpassword found in the firebase API that creates a new user on the firebase database, also using completion handler and closures
         //so if there is an error with creating a user that would print error, if successful -> home page
@@ -40,11 +40,16 @@ class RegisterScreenViewController: UIViewController {
         Auth.auth().createUser(withEmail: enterEmailTextField.text!, password: enterPasswordTextField.text!) { (user, error) in
             
             if error != nil {
+                 print("Registration Unsuccessful")
                 print(error!)
+                SVProgressHUD.dismiss()
+                SVProgressHUD.showError(withStatus: "Registration Unsuccessful")
+                SVProgressHUD.dismiss(withDelay: 1)
             } else {
                print("Your Registration Was Successful")
-                
                 SVProgressHUD.dismiss()
+                SVProgressHUD.showSuccess(withStatus: "Login successful")
+                SVProgressHUD.dismiss(withDelay: 1)
             }
             
         }

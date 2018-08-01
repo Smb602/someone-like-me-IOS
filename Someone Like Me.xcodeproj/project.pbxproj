@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		241387962104F970003E8001 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 241387952104F970003E8001 /* Default-568h@2x.png */; };
 		2413879821061A48003E8001 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413879721061A48003E8001 /* InfoViewController.swift */; };
 		242ABEC32106A43A005572F0 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */; };
 		242ABEC52106A47B005572F0 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		0F0F1F6DECD704DBFB7243B4 /* Pods-Someone Like Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Someone Like Me.release.xcconfig"; path = "Pods/Target Support Files/Pods-Someone Like Me/Pods-Someone Like Me.release.xcconfig"; sourceTree = "<group>"; };
-		241387952104F970003E8001 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2413879721061A48003E8001 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 		24E3DD5820ED60E400D71E63 = {
 			isa = PBXGroup;
 			children = (
-				241387952104F970003E8001 /* Default-568h@2x.png */,
 				24E3DD6220ED60E500D71E63 /* Products */,
 				24E3DD6320ED60E500D71E63 /* Someone Like Me */,
 				9C5A3636345D5703FBCEC2C9 /* Pods */,
@@ -222,7 +219,6 @@
 				24F8AB14210CEBFD0066076E /* MessageCell.xib in Resources */,
 				249EA00320FFA54000E12CE1 /* GoogleService-Info.plist in Resources */,
 				24E3DD6C20ED60E600D71E63 /* Assets.xcassets in Resources */,
-				241387962104F970003E8001 /* Default-568h@2x.png in Resources */,
 				24E3DD6A20ED60E500D71E63 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
