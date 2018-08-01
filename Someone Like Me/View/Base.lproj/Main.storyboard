@@ -875,6 +875,7 @@
                                     <constraint firstItem="GRp-7m-mee" firstAttribute="trailing" secondItem="fMn-mk-Zoi" secondAttribute="trailingMargin" id="OzB-Dv-Z5e"/>
                                     <constraint firstItem="SAD-Um-si0" firstAttribute="top" secondItem="fMn-mk-Zoi" secondAttribute="top" constant="10" id="flV-tu-fG3"/>
                                     <constraint firstItem="SAD-Um-si0" firstAttribute="leading" secondItem="fMn-mk-Zoi" secondAttribute="leadingMargin" id="itr-OA-Sx8"/>
+                                    <constraint firstAttribute="height" constant="50" id="pcS-DQ-Ytm"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tqo-yv-NnI" userLabel="Message Table View">
@@ -898,6 +899,7 @@
                             <constraint firstAttribute="trailing" secondItem="tqo-yv-NnI" secondAttribute="trailing" id="9A9-Mq-Pfb"/>
                             <constraint firstItem="tqo-yv-NnI" firstAttribute="leading" secondItem="grV-EW-FTF" secondAttribute="leading" id="aqq-TE-4lC"/>
                             <constraint firstItem="fMn-mk-Zoi" firstAttribute="bottom" secondItem="Sop-Tm-IoQ" secondAttribute="top" id="bD0-Mm-25O"/>
+                            <constraint firstItem="fMn-mk-Zoi" firstAttribute="top" secondItem="tqo-yv-NnI" secondAttribute="bottom" id="epL-wr-U6z"/>
                             <constraint firstItem="fMn-mk-Zoi" firstAttribute="top" secondItem="tqo-yv-NnI" secondAttribute="bottom" id="lVg-sa-Ytv"/>
                             <constraint firstItem="tqo-yv-NnI" firstAttribute="top" secondItem="26t-2J-U5b" secondAttribute="top" id="lfb-f9-hXm"/>
                             <constraint firstItem="tqo-yv-NnI" firstAttribute="leading" secondItem="fMn-mk-Zoi" secondAttribute="leading" id="tsl-Mc-Lkx"/>
@@ -915,7 +917,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="heightConstraint" destination="fMn-mk-Zoi" id="N7w-jZ-74w"/>
+                        <outlet property="heightConstraint" destination="pcS-DQ-Ytm" id="VJ7-IV-HfB"/>
                         <outlet property="messagesTableView" destination="tqo-yv-NnI" id="85A-zN-MFH"/>
                         <outlet property="sendButtonPressed" destination="GRp-7m-mee" id="jp2-vm-78G"/>
                         <outlet property="typeMessageTextfield" destination="SAD-Um-si0" id="TbY-z9-iKd"/>

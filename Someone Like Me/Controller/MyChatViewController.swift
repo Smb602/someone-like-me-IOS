@@ -87,7 +87,7 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //messages sent by us, change the imageview to xxx colour
         if cell.theSendersUsername.text == Auth.auth().currentUser?.email as String! { //or replace everything after = to = "Me"
             cell.displayPicture.backgroundColor = UIColor.flatPowderBlue()
-            cell.theMessageBackground.backgroundColor = UIColor.flatMagenta()
+            cell.theMessageBackground.backgroundColor = UIColor.flatLime()
             
         }else{ //messages not sent by us
             cell.displayPicture.backgroundColor = UIColor.flatSand()
@@ -130,7 +130,7 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
        
         UIView.animate(withDuration: 0.4) {
             //this is so the textfield view is still visible once keyboard comes up
-            self.heightConstraint.constant = 308 //textfield=50 keyboard=258 50+258=308
+            self.heightConstraint.constant += 308 //textfield=50 keyboard=258 50+258=308
             //call method on view to call on autolayout to update all views
             self.view.layoutIfNeeded() //redraw the whole thing
         }
@@ -139,7 +139,7 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //This method tells the delegate when editing has stopped in specified textfield and requires a tap gesture to register when user moves away
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.4) {
-            self.heightConstraint.constant = 308 //back to 50 after keyboard is gone
+            self.heightConstraint.constant -= 308 //back to 50 after keyboard is gone
             self.view.layoutIfNeeded()
         }
     }
