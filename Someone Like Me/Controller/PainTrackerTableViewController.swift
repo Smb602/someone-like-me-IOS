@@ -65,9 +65,13 @@ class PainTrackerTableViewController: UITableViewController {
         
         //this will occur once a user selects the add icon on the UIAlert
         let action = UIAlertAction(title: "Add Entry", style: .default) { (action) in
+            //delete if this causes bug this is a solution for only adding a new item if textfield is not empty otherwise it'll add an empty one
+            if localTextField.text != "" {
+                
             self.painItemArray.append(localTextField.text!) //inside closure (in keyword) specify self so compiler knows where it exists in this class
             
             self.tableView.reloadData() // so new data added to item array appears on tableview
+            }
         }
         thisAlert.addTextField { (thisAlertTextField) in
             thisAlertTextField.placeholder = "Enter the date" //placeholder within textfield to enter new additions
