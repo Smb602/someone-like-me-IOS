@@ -2,7 +2,7 @@
 //  SearchWeatherVC.swift
 //  Someone Like Me
 //
-//  Created by Sharon Borges-Bango on 03/08/2018.
+//  Created by Sharon Borges-Bango on 19/07/2018.
 //  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
 //
 
