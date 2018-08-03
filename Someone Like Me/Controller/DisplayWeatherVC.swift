@@ -18,12 +18,12 @@ class DisplayWeatherVC: UIViewController {
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+    let APP_ID = "c79318556e2672741f3bdff20507f957" //set up my own free account on https://home.openweathermap.org/api_keys to get my own appid
     
     @IBAction func `switch`(_ sender: Any) {
-        if sender.isOn {
+    //    if sender.isOn {
             
-        }
+     //   }
     }
     
    

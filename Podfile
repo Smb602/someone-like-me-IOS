@@ -13,6 +13,9 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'SVProgressHUD'
 pod 'ChameleonFramework'
+pod 'SwiftyJSON'
+pod 'Alamofire'
+
 
 
 end
