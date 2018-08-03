@@ -22,6 +22,9 @@
 		24F8AB10210CEA360066076E /* ChatMessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F8AB0F210CEA360066076E /* ChatMessagesCell.swift */; };
 		24F8AB14210CEBFD0066076E /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24F8AB13210CEBFD0066076E /* MessageCell.xib */; };
 		24F8AB162113207C0066076E /* PainTrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F8AB152113207C0066076E /* PainTrackerTableViewController.swift */; };
+		24F8AB182114C2D90066076E /* DisplayWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F8AB172114C2D90066076E /* DisplayWeatherVC.swift */; };
+		24F8AB1A2114C55C0066076E /* SearchWeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F8AB192114C55C0066076E /* SearchWeatherVC.swift */; };
+		24F8AB1C2114C6270066076E /* DataModelWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F8AB1B2114C6270066076E /* DataModelWeather.swift */; };
 		F51CF9FC75FC17ABE8C61FCA /* Pods_Someone_Like_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C463EF30904C973F1846D692 /* Pods_Someone_Like_Me.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		24F8AB0F210CEA360066076E /* ChatMessagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesCell.swift; sourceTree = "<group>"; };
 		24F8AB13210CEBFD0066076E /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		24F8AB152113207C0066076E /* PainTrackerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainTrackerTableViewController.swift; sourceTree = "<group>"; };
+		24F8AB172114C2D90066076E /* DisplayWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayWeatherVC.swift; sourceTree = "<group>"; };
+		24F8AB192114C55C0066076E /* SearchWeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWeatherVC.swift; sourceTree = "<group>"; };
+		24F8AB1B2114C6270066076E /* DataModelWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelWeather.swift; sourceTree = "<group>"; };
 		645446F6429D9CAA7882F6A3 /* Pods-Someone Like Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Someone Like Me.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Someone Like Me/Pods-Someone Like Me.debug.xcconfig"; sourceTree = "<group>"; };
 		C463EF30904C973F1846D692 /* Pods_Someone_Like_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Someone_Like_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -75,6 +81,8 @@
 			children = (
 				24F8AB152113207C0066076E /* PainTrackerTableViewController.swift */,
 				24E3DD6420ED60E500D71E63 /* AppDelegate.swift */,
+				24F8AB172114C2D90066076E /* DisplayWeatherVC.swift */,
+				24F8AB192114C55C0066076E /* SearchWeatherVC.swift */,
 				2413879721061A48003E8001 /* InfoViewController.swift */,
 				242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */,
 				24F8AB08210C84230066076E /* MyChatViewController.swift */,
@@ -87,6 +95,7 @@
 		249EA00920FFB2DC00E12CE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24F8AB1B2114C6270066076E /* DataModelWeather.swift */,
 				249EA00A20FFB32D00E12CE1 /* Messages.swift */,
 			);
 			path = Model;
@@ -292,8 +301,11 @@
 				2413879821061A48003E8001 /* InfoViewController.swift in Sources */,
 				242ABEC52106A47B005572F0 /* RegisterScreenViewController.swift in Sources */,
 				24F8AB032106D2920066076E /* WelcomeScreenViewController.swift in Sources */,
+				24F8AB182114C2D90066076E /* DisplayWeatherVC.swift in Sources */,
 				24F8AB162113207C0066076E /* PainTrackerTableViewController.swift in Sources */,
 				24E3DD6520ED60E500D71E63 /* AppDelegate.swift in Sources */,
+				24F8AB1C2114C6270066076E /* DataModelWeather.swift in Sources */,
+				24F8AB1A2114C55C0066076E /* SearchWeatherVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
