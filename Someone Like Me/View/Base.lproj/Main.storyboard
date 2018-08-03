@@ -387,7 +387,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="130" id="xch-UT-DbP" customClass="TableViewCell" customModule="Someone_Like_Me" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="articleCell" rowHeight="130" id="xch-UT-DbP" customClass="TableViewCell" customModule="Someone_Like_Me" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="266" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xch-UT-DbP" id="fEL-Vr-od5">
@@ -638,7 +638,13 @@
                             <outlet property="delegate" destination="nMG-iS-mOp" id="uwn-GY-6vD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pain Tracker" id="YJP-Rk-p6i"/>
+                    <navigationItem key="navigationItem" title="Pain Tracker" id="YJP-Rk-p6i">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dPf-zp-A6z">
+                            <connections>
+                                <action selector="additionButtonPressed:" destination="nMG-iS-mOp" id="9cH-ao-MU0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvi-Xz-bWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -919,7 +925,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="573"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="FZJ-W4-aK9">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="FZJ-W4-aK9">
                                         <rect key="frame" x="0.0" y="22" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FZJ-W4-aK9" id="1T4-az-HlF">
