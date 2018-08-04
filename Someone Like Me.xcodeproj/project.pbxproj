@@ -10,9 +10,12 @@
 		2413879821061A48003E8001 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2413879721061A48003E8001 /* InfoViewController.swift */; };
 		242ABEC32106A43A005572F0 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */; };
 		242ABEC52106A47B005572F0 /* RegisterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */; };
-		248DD4AC2106230100E7FCA9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248DD4AB2106230100E7FCA9 /* TableViewCell.swift */; };
+		248DD4AC2106230100E7FCA9 /* ArticlesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248DD4AB2106230100E7FCA9 /* ArticlesTableViewCell.swift */; };
 		249EA00320FFA54000E12CE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 249EA00220FFA53F00E12CE1 /* GoogleService-Info.plist */; };
 		249EA00B20FFB32D00E12CE1 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249EA00A20FFB32D00E12CE1 /* Messages.swift */; };
+		24ABD7632115EE570058C52F /* PainArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ABD7622115EE570058C52F /* PainArticlesViewController.swift */; };
+		24ABD7652115F6540058C52F /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ABD7642115F6540058C52F /* Articles.swift */; };
+		24ABD767211601C00058C52F /* ArticleBodyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24ABD766211601C00058C52F /* ArticleBodyTableViewCell.swift */; };
 		24E3DD6520ED60E500D71E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E3DD6420ED60E500D71E63 /* AppDelegate.swift */; };
 		24E3DD6A20ED60E500D71E63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24E3DD6820ED60E500D71E63 /* Main.storyboard */; };
 		24E3DD6C20ED60E600D71E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E3DD6B20ED60E600D71E63 /* Assets.xcassets */; };
@@ -33,9 +36,12 @@
 		2413879721061A48003E8001 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreenViewController.swift; sourceTree = "<group>"; };
-		248DD4AB2106230100E7FCA9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		248DD4AB2106230100E7FCA9 /* ArticlesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewCell.swift; sourceTree = "<group>"; };
 		249EA00220FFA53F00E12CE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		249EA00A20FFB32D00E12CE1 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		24ABD7622115EE570058C52F /* PainArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainArticlesViewController.swift; sourceTree = "<group>"; };
+		24ABD7642115F6540058C52F /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		24ABD766211601C00058C52F /* ArticleBodyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleBodyTableViewCell.swift; sourceTree = "<group>"; };
 		24E3DD6120ED60E500D71E63 /* Someone Like Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Someone Like Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E3DD6420ED60E500D71E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24E3DD6920ED60E500D71E63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,9 +75,9 @@
 		249EA00720FFB22000E12CE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				24ABD7612115ED8E0058C52F /* Cells */,
 				24E3DD6820ED60E500D71E63 /* Main.storyboard */,
 				24E3DD6D20ED60E600D71E63 /* LaunchScreen.storyboard */,
-				248DD4AB2106230100E7FCA9 /* TableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -79,15 +85,12 @@
 		249EA00820FFB25400E12CE1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				24F8AB152113207C0066076E /* PainTrackerTableViewController.swift */,
+				24ABD7602115ED2B0058C52F /* Launch Screen */,
+				24ABD75F2115EC920058C52F /* Home */,
+				24ABD75E2115EC850058C52F /* Chats */,
+				24ABD75D2115EC820058C52F /* Weather */,
+				24ABD75C2115EC7B0058C52F /* Pain Tracker */,
 				24E3DD6420ED60E500D71E63 /* AppDelegate.swift */,
-				24F8AB172114C2D90066076E /* DisplayWeatherVC.swift */,
-				24F8AB192114C55C0066076E /* SearchWeatherVC.swift */,
-				2413879721061A48003E8001 /* InfoViewController.swift */,
-				242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */,
-				24F8AB08210C84230066076E /* MyChatViewController.swift */,
-				242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */,
-				24F8AB022106D2920066076E /* WelcomeScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -97,6 +100,7 @@
 			children = (
 				24F8AB1B2114C6270066076E /* DataModelWeather.swift */,
 				249EA00A20FFB32D00E12CE1 /* Messages.swift */,
+				24ABD7642115F6540058C52F /* Articles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +112,61 @@
 				249EA00220FFA53F00E12CE1 /* GoogleService-Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		24ABD75C2115EC7B0058C52F /* Pain Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				24F8AB152113207C0066076E /* PainTrackerTableViewController.swift */,
+			);
+			path = "Pain Tracker";
+			sourceTree = "<group>";
+		};
+		24ABD75D2115EC820058C52F /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				24F8AB192114C55C0066076E /* SearchWeatherVC.swift */,
+				24F8AB172114C2D90066076E /* DisplayWeatherVC.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		24ABD75E2115EC850058C52F /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				24F8AB08210C84230066076E /* MyChatViewController.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		24ABD75F2115EC920058C52F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2413879721061A48003E8001 /* InfoViewController.swift */,
+				24ABD7622115EE570058C52F /* PainArticlesViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		24ABD7602115ED2B0058C52F /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				24F8AB022106D2920066076E /* WelcomeScreenViewController.swift */,
+				242ABEC22106A43A005572F0 /* LoginScreenViewController.swift */,
+				242ABEC42106A47B005572F0 /* RegisterScreenViewController.swift */,
+			);
+			path = "Launch Screen";
+			sourceTree = "<group>";
+		};
+		24ABD7612115ED8E0058C52F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				24F8AB13210CEBFD0066076E /* MessageCell.xib */,
+				24F8AB0F210CEA360066076E /* ChatMessagesCell.swift */,
+				248DD4AB2106230100E7FCA9 /* ArticlesTableViewCell.swift */,
+				24ABD766211601C00058C52F /* ArticleBodyTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		24E3DD5820ED60E400D71E63 = {
@@ -131,7 +190,6 @@
 		24E3DD6320ED60E500D71E63 /* Someone Like Me */ = {
 			isa = PBXGroup;
 			children = (
-				24F8AB0A210CE7000066076E /* Chat Cell */,
 				24E3DD6B20ED60E600D71E63 /* Assets.xcassets */,
 				249EA00820FFB25400E12CE1 /* Controller */,
 				249EA00920FFB2DC00E12CE1 /* Model */,
@@ -139,15 +197,6 @@
 				249EA00720FFB22000E12CE1 /* View */,
 			);
 			path = "Someone Like Me";
-			sourceTree = "<group>";
-		};
-		24F8AB0A210CE7000066076E /* Chat Cell */ = {
-			isa = PBXGroup;
-			children = (
-				24F8AB0F210CEA360066076E /* ChatMessagesCell.swift */,
-				24F8AB13210CEBFD0066076E /* MessageCell.xib */,
-			);
-			path = "Chat Cell";
 			sourceTree = "<group>";
 		};
 		93412E46DB9002095F44E5EA /* Frameworks */ = {
@@ -298,7 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				249EA00B20FFB32D00E12CE1 /* Messages.swift in Sources */,
-				248DD4AC2106230100E7FCA9 /* TableViewCell.swift in Sources */,
+				24ABD7652115F6540058C52F /* Articles.swift in Sources */,
+				248DD4AC2106230100E7FCA9 /* ArticlesTableViewCell.swift in Sources */,
 				24F8AB09210C84230066076E /* MyChatViewController.swift in Sources */,
 				242ABEC32106A43A005572F0 /* LoginScreenViewController.swift in Sources */,
 				24F8AB10210CEA360066076E /* ChatMessagesCell.swift in Sources */,
@@ -309,6 +359,8 @@
 				24F8AB162113207C0066076E /* PainTrackerTableViewController.swift in Sources */,
 				24E3DD6520ED60E500D71E63 /* AppDelegate.swift in Sources */,
 				24F8AB1C2114C6270066076E /* DataModelWeather.swift in Sources */,
+				24ABD7632115EE570058C52F /* PainArticlesViewController.swift in Sources */,
+				24ABD767211601C00058C52F /* ArticleBodyTableViewCell.swift in Sources */,
 				24F8AB1A2114C55C0066076E /* SearchWeatherVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

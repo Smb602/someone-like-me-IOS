@@ -19,6 +19,12 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
     //creating connection for the UITableView and the UIVisualEffectView
     @IBOutlet weak var articleTableView: UITableView!
     @IBOutlet weak var headerBlurrEffect: UIVisualEffectView!
+    
+    lazy var titleToBePassed = ""
+    lazy var bodyToBePassed = ""
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.articleTableView.dataSource = self
@@ -28,22 +34,47 @@ class InfoViewController: UIViewController, UIScrollViewDelegate {
         // Do any additional setup after loading the view.
 
     }
+    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! PainArticlesViewController
+        
+        destination.articleTitle = titleToBePassed
+        destination.articleBody = bodyToBePassed
+    }
 
 }
   //this returns 5 cells containing the maximum cells on this page and refreshes corresponding to number //of articles
 extension InfoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return articleTitleArray.count
     }
     //setting properties of the table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ArticlesTableViewCell
+        cell.articleTitle.text = articleTitleArray[indexPath.row]
+        cell.articleSample.text = articleBodyArray[indexPath.row]
 
         return cell
     }
      //setting properties of the table view
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ArticlesTableViewCell {
+            
+            titleToBePassed = cell.articleTitle.text!
+            bodyToBePassed = cell.articleSample.text!
+            
+        }
+        
+        performSegue(withIdentifier: "goToPainArticles", sender: self)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

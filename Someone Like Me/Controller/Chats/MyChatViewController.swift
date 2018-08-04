@@ -83,7 +83,7 @@ class MyChatViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.displayPicture.image = UIImage(named: "default-picture.png")
         
         //messages sent by us, change the imageview to xxx colour
-        if cell.theSendersUsername.text == Auth.auth().currentUser?.email as String! { //or replace everything after = to = "Me"
+        if cell.theSendersUsername.text == Auth.auth().currentUser?.email as String! {
             cell.displayPicture.backgroundColor = UIColor.flatPowderBlue() //set colours to these
             cell.theMessageBackground.backgroundColor = UIColor.flatLime()
             
