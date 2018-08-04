@@ -1,10 +1,10 @@
-//
-//  SearchWeatherVC.swift
-//  Someone Like Me
-//
-//  Created by Sharon Borges-Bango on 19/07/2018.
-//  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
-//
+/*
+  SearchWeatherVC.swift
+  Someone Like Me
+
+  Created by Sharon Borges-Bango on 19/07/2018.
+  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
+*/
 
 import UIKit
 

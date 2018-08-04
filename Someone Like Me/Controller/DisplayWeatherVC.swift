@@ -1,13 +1,15 @@
-//
-//  ChangeWeatherVC.swift
-//  Someone Like Me
-//
-//  Created by Sharon Borges-Bango on 19/07/2018.
-//  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
-//
+/*
+  ChangeWeatherVC.swift
+  Someone Like Me
+
+  Created by Sharon Borges-Bango on 19/07/2018.
+  Copyright © 2018 Sharon Borges-Bango. All rights reserved.
+*/
 
 import UIKit
 import CoreLocation //allows us to tap into core location GPS function iphone
+import Alamofire
+import SwiftyJSON
 
 //this class is a subclass of UiViewController and conforms to rules of CLLocationManagerDelegate
 class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
@@ -16,7 +18,7 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var farenheit: UISwitch!
     
     // My Constants
-    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather" // weather url, website we get current weather data from
+    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather" // weather url, is a website to get current weather data from
     let APP_ID = "c79318556e2672741f3bdff20507f957" //set up my own free account on https://home.openweathermap.org/api_keys to get my own appid
     
     @IBAction func `switch`(_ sender: Any) {
@@ -26,9 +28,9 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
     }
     
    
-    //TODO: Declare instance variables here - Creating a new location object
+    //Declaring instance variables here - Creating a new location object
     let thisLocationManager = CLLocationManager()
-    
+    let dataModelWeather = DataModelWeather() //creating weather data model
     
     //IB outlets
     @IBOutlet var tempLabel: UILabel!
@@ -58,19 +60,48 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Methods Networking: makes http requests for weather data from the website
 
-    // getWeatherData method
+    // getTheWeatherInfo method takes to params url,string and allParameter structured dictionary
+    func getTheWeatherInfo(url: String, parameters: [String: String]) {
+        
+        //using Alamofire to make the http request and handle response from open weather map servers
+        Alamofire.request(url, method: .get, parameters: parameters).responseJSON { //.get method recieves data and nothing else and is asynchronus and then>response
+            response in
+            if response.result.isSuccess {
+                print("Successful, we have weather data!") //testing in console
+                
+                //new constant v datatype of type JSON(JavaScript Object Notation) formatting large
+                let theWeatherJSON : JSON = JSON(response.result.value!) //force unwrapping as already checked if result was successful and deffo isn't nil
+                //print(theWeatherJSON) //for testing
+                
+                self.updateTheWeatherInfo(json: theWeatherJSON) //pull out relevant values and update labels and imageviews
+                
+            }else{
+                print("ERROR \(response.result.error))")
+                self.showCityLabel.text = "You Have Connection Problems"
+            }
+        }
+    }
     
     
+    //MARK: - Methods JSON Parsing: that passes data from open weather map to what we want to display, aids in pulling out relevant values and update labels and imageviews
     
-    
-    
-    
-    
-    //MARK: - Methods JSON Parsing: that passes data from open weather map to what we want to display
-    
-    //updateWeatherData method
-    
-    
+    //updateTheWeatherInfo method
+    func updateTheWeatherInfo(json : JSON) {
+        
+        //json array values are the ones printed in the console pulled from the open weather site
+        if let tempValue = json["main"]["temp"].double { //all main values and key temp and get it's value using SwiftyJSON; converted into double
+        
+        //updating datamodelweatherobject
+        dataModelWeather.theTempertaure = Int(tempValue - 273.15) // temp property convert from kelvin into degrees, converted into Int
+        dataModelWeather.theCity = json["name"].stringValue
+        dataModelWeather.weatherConditon =  json["weather"][0]["id"].intValue //getting weather, object at index 0 and the id, convert to int
+        dataModelWeather.theWeatherIcon = dataModelWeather.updateIcons(condition: dataModelWeather.weatherConditon)
+        }else{
+        //if there's no temp or json
+            showCityLabel.text = "Retrieving Weather is Unavailable"
+        }
+        
+    }
     
     
     
@@ -88,15 +119,19 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
         let locationFound = locations[locations.count - 1] //last location
         if locationFound.horizontalAccuracy > 0 { // we have to make sure the value is valid and positive
             thisLocationManager.stopUpdatingLocation() //energy intensive, stop updating location once valid result found
-
+            thisLocationManager.delegate = nil //removes recieving locations while stopping so no repeated data during
+            
             print("longitude = \(locationFound.coordinate.longitude), latitude = \(locationFound.coordinate.latitude)")
             
             //turning coordinates into parameters that will be sent to openweathermap api
             let foundLatitude = String(locationFound.coordinate.latitude) //converting doubles into type strings
             let foundLongitude = String(locationFound.coordinate.longitude)
-            //combining both parameters into a dictionary where key is string and value is string, array of dictionary obj lat is key and foundLatitude constant =value, lon is also key and foundLongitude constant= the value
-            let parameters : [String : String] = ["lat" : foundLatitude, "lon" : foundLongitude, "appid" : APP_ID]
+            //combining both parameters into a dictionary where key is string and value is string, array of dictionary obj lat is key and foundLatitude constant =value, lon is also key and foundLongitude constant= the value, appid key is associated with the APP_ID value
+            let theParameters : [String : String] = ["lat" : foundLatitude, "lon" : foundLongitude, "appid" : APP_ID]
             //lat, lon and appid are all required as part of API calls to the openweather map
+            
+            getTheWeatherInfo(url: WEATHER_URL, parameters: theParameters)
+            
         }
     }
     
