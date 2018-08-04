@@ -1,6 +1,8 @@
 /*
   ChangeWeatherVC.swift
   Someone Like Me
+ 
+ 
 
   Created by Sharon Borges-Bango on 19/07/2018.
   Copyright © 2018 Sharon Borges-Bango. All rights reserved.
@@ -12,7 +14,7 @@ import Alamofire
 import SwiftyJSON
 
 //this class is a subclass of UiViewController and conforms to rules of CLLocationManagerDelegate
-class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
+class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate, SearchCityWeatherDelegate {
 
     
     @IBOutlet var farenheit: UISwitch!
@@ -21,10 +23,13 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather" // weather url, is a website to get current weather data from
     let APP_ID = "c79318556e2672741f3bdff20507f957" //set up my own free account on https://home.openweathermap.org/api_keys to get my own appid
     
-    @IBAction func `switch`(_ sender: Any) {
-    //    if sender.isOn {
+    @IBAction func `switch`(_ sender: UISwitch) {
+        if sender.isOn {
+            updateUIWeatherInfo()
+        }else{
+            tempLabel.text = "\((dataModelWeather.theTempertaure * 9/5)+32)℉"
             
-     //   }
+        }
     }
     
    
@@ -47,7 +52,7 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
         
         //Setting up the location manager here by refering to locationmanager at the top.delegate  = self(is current class. Setting the weather view controller as the delgate so location manager knows who to report to once gets location data)
         thisLocationManager.delegate = self
-        thisLocationManager.desiredAccuracy = kCLLocationAccuracyKilometer //accuracy of location 
+        thisLocationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters //accuracy of location
         thisLocationManager.requestWhenInUseAuthorization() //requesting users authorisation to use location
         thisLocationManager.startUpdatingLocation() //asynchronous method (means working background) to get gps location once becomes accurate sends
         
@@ -96,6 +101,9 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
         dataModelWeather.theCity = json["name"].stringValue
         dataModelWeather.weatherConditon =  json["weather"][0]["id"].intValue //getting weather, object at index 0 and the id, convert to int
         dataModelWeather.theWeatherIcon = dataModelWeather.updateIcons(condition: dataModelWeather.weatherConditon)
+       
+        updateUIWeatherInfo()
+            
         }else{
         //if there's no temp or json
             showCityLabel.text = "Retrieving Weather is Unavailable"
@@ -107,7 +115,13 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Methods UI Updates: to update the weather conditions: what will be displayed in label, weather images
    
-    // updateUIWithWeatherData method
+    // updating UI With the Weather Info method
+    func updateUIWeatherInfo() {
+        
+        showCityLabel.text = dataModelWeather.theCity
+        tempLabel.text = "\(dataModelWeather.theTempertaure)°" //casting as String
+        iconShowWeather.image = UIImage(named: dataModelWeather.theWeatherIcon)
+    }
     
     
     
@@ -146,10 +160,24 @@ class DisplayWeatherVC: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Methods Searching a Different City/Area Delegate: changing from one VC(viewcontroller) to the other and how pass data between two VC's
     
-    //method userEnteredANewCityName Delegate
+    //method userSearchedNewWeather Delegate and going to network with alamofire to get weather details from openweatermap site and using swifty json to parse that info and then update the UI
+    func userSearchedNewWeather(city: String) {
     
+        //creating dictionary of all params we are sending to weather site as well as the area/city. Open weather map API states parameter used must be
+        // "q city name and country code divided by comma i.e q=London"
+        let theParams : [String : String] = ["q" : city, "appid" : APP_ID]
+        
+        getTheWeatherInfo(url: WEATHER_URL, parameters: theParams)
+        
+        
+        
+    }
     
-    //method to PrepareForSegue
-
-    
+    //method to Segue from 1st VC to the 2nd VC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "searchWeather" {
+            let theDestinationVC = segue.destination as! SearchWeatherVC
+            theDestinationVC.delegate = self
+        }
+    }
 }
